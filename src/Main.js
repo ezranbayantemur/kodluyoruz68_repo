@@ -1,37 +1,24 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
-
-import MyButton from './components/MyButton';
+import {SafeAreaView, View, Text} from 'react-native';
 
 function Main() {
   return (
-    <SafeAreaView>
-      <View style={styles.viewStyle}>
-        <Text style={styles.textStyle}>Merhaba!</Text>
+    <SafeAreaView style={{flex: 1}}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: 'orange',
+          justifyContent: 'space-evenly',
+          alignItems: 'flex-start',
+          flexDirection: 'column-reverse',
+        }}>
+        <Text style={{fontSize: 30}}>Erzincan</Text>
+        <Text style={{fontSize: 30}}>İzmir</Text>
+        <Text style={{fontSize: 30}}>İstanbul</Text>
       </View>
-
-      <MyButton title="Go!" theme="myBTN_1" />
-      <MyButton title="Hello!" theme="myBTN_2" />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  viewStyle: {
-    backgroundColor: '#eceff1',
-    margin: 10,
-    padding: 20,
-    borderRadius: 20,
-  },
-  textStyle: {
-    fontSize: 60,
-  },
-});
 
 export default Main;
