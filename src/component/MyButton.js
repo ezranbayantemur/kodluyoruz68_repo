@@ -7,6 +7,9 @@ const MyButton = (props) => {
       <TouchableOpacity style={styles.buttonContainer} onPress={props.myPress}>
         <Text>{props.myTitle}</Text>
       </TouchableOpacity>
+      {props.myHeader}
+      {props.children}
+      {props.children}
 
       <TouchableOpacity
         style={[styles.buttonContainer, {backgroundColor: 'red'}]}

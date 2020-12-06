@@ -11,21 +11,20 @@ function Main() {
         <Text style={{fontSize: 50}}>Hello!</Text>
 
         <MyButton
-          myTitle="Ezran"
+          myTitle={'Ezran'}
+          myNumber={5}
           myPress={() => alert('Selam Ezran')}
           onSend={(val) => alert('Value is: ' + val)}
-        />
-        <MyButton
-          myTitle="Ayşe"
-          myPress={() => alert('İzmir')}
-          onSend={(val) => alert('Value is: ' + val)}
-        />
-
-        <MyButton
-          myTitle="Ali"
-          myPress={() => alert('Ankara!')}
-          onSend={(val) => alert('Value is: ' + val)}
-        />
+          myHeader={<Text>TEXT</Text>}>
+          <View
+            style={{
+              margin: 10,
+              backgroundColor: 'blue',
+              padding: 10,
+            }}>
+            <Text>Merhaba</Text>
+          </View>
+        </MyButton>
       </View>
     </SafeAreaView>
   );
