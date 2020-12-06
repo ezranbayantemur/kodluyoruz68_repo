@@ -1,29 +1,30 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {SafeAreaView, View, Text, Button} from 'react-native';
-import MyButton from './component/MyButton';
+import {SafeAreaView, View, TextInput, StyleSheet} from 'react-native';
 
 function Main() {
-  const isAdmin = true;
-
-  function controlUser(value) {
-    if (value < 50) return 'LOW';
-    return 'HIGH';
-  }
-
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1}}>
-        <Text style={{fontSize: 50}}>Hello!</Text>
-
-        <Text>{isAdmin ? 'ADMIN USER' : 'CUSTOMER'}</Text>
-        <Text>{controlUser(25)}</Text>
-
-        {isAdmin && <Text>UPDATE</Text>}
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="Adınızı giriniz.."
+            onChangeText={(value) => console.log(value)}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
 }
 
 export default Main;
+
+const styles = StyleSheet.create({
+  inputContainer: {
+    backgroundColor: '#eceff1',
+    padding: 10,
+    margin: 5,
+    borderRadius: 5,
+  },
+});
