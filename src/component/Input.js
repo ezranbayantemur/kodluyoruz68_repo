@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, TextInput, StyleSheet, Platform} from 'react-native';
 
 function Input(props) {
   return (
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: '#eceff1',
     padding: 10,
+    paddingVertical: Platform.OS === 'android' ? 0 : 10,
     margin: 5,
     borderRadius: 5,
   },
