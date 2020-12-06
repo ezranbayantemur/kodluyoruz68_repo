@@ -5,26 +5,22 @@ import {SafeAreaView, View, Text, Button} from 'react-native';
 import MyButton from './component/MyButton';
 
 function Main() {
+  const isAdmin = true;
+
+  function controlUser(value) {
+    if (value < 50) return 'LOW';
+    return 'HIGH';
+  }
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1}}>
         <Text style={{fontSize: 50}}>Hello!</Text>
 
-        <MyButton
-          myTitle={'Ezran'}
-          myNumber={5}
-          myPress={() => alert('Selam Ezran')}
-          onSend={(val) => alert('Value is: ' + val)}
-          myHeader={<Text>TEXT</Text>}>
-          <View
-            style={{
-              margin: 10,
-              backgroundColor: 'blue',
-              padding: 10,
-            }}>
-            <Text>Merhaba</Text>
-          </View>
-        </MyButton>
+        <Text>{isAdmin ? 'ADMIN USER' : 'CUSTOMER'}</Text>
+        <Text>{controlUser(25)}</Text>
+
+        {isAdmin && <Text>UPDATE</Text>}
       </View>
     </SafeAreaView>
   );
