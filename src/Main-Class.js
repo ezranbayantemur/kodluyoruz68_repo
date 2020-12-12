@@ -1,21 +1,25 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View, Text, Button} from 'react-native';
 
 class Main extends Component {
   constructor(props) {
     super(props);
-  }
 
-  checkUser(name) {
-    return <Text>USERNAME: {name}</Text>;
+    this.state = {
+      counter: 0,
+    };
   }
 
   render() {
     return (
       <SafeAreaView>
         <View>
-          <Text>Hello Class!</Text>
-          {this.checkUser('EZRAN')}
+          <Text style={{fontSize: 50}}>Counter: {this.state.counter}</Text>
+          <Button
+            title="up!"
+            onPress={() => this.setState({counter: this.state.counter + 1})}
+          />
         </View>
       </SafeAreaView>
     );
