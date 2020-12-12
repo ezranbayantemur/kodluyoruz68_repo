@@ -1,16 +1,15 @@
-import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useState} from 'react';
+import {SafeAreaView, View, Text, Button} from 'react-native';
 
 function Main(props) {
-  function checkUser(name) {
-    return <Text>USERNAME: {name}</Text>;
-  }
+  const [counter, setCounter] = useState(0);
 
   return (
     <SafeAreaView>
       <View>
-        <Text>Hello Functional</Text>
-        {checkUser('EZRAN')}
+        <Text style={{fontSize: 50}}>Counter: {counter}</Text>
+        <Button title="up!" onPress={() => setCounter(counter + 1)} />
       </View>
     </SafeAreaView>
   );
