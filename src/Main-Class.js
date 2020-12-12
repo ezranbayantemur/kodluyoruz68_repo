@@ -13,6 +13,7 @@ class Main extends Component {
     console.log('CONSTRUCTOR');
   }
 
+
   componentDidMount() {
     console.log('COMPONENT DID MOUNT');
   }
