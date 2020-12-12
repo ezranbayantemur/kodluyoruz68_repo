@@ -9,17 +9,21 @@ class Main extends Component {
     this.state = {
       counter: 0,
     };
+
+    console.log('CONSTRUCTOR');
+  }
+
+  componentDidMount() {
+    console.log('COMPONENT DID MOUNT');
   }
 
   render() {
+    console.log('RENDER');
     return (
       <SafeAreaView>
         <View>
           <Text style={{fontSize: 50}}>Counter: {this.state.counter}</Text>
-          <Button
-            title="up!"
-            onPress={() => this.setState({counter: this.state.counter + 1})}
-          />
+          <Button title="up!" onPress={() => this.setState({counter: 5})} />
         </View>
       </SafeAreaView>
     );
