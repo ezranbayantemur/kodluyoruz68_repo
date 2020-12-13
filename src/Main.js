@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView, View, FlatList, StyleSheet} from 'react-native';
-import {ProductCard} from './components';
+import {ProductCard, SearchBar} from './components';
 
 const products = [
   {
@@ -96,14 +95,31 @@ const products = [
 ];
 
 function Main() {
+  const [productList, setProductList] = useState([]);
   const renderProduct = ({item}) => <ProductCard product={item} />;
+
+  function searchProduct(text) {
+    const filteredList = products.filter((product) => {
+      const itemName = product.title.toUpperCase();
+      const searchWord = text.toUpperCase();
+
+      return itemName.indexOf(searchWord) > -1;
+    });
+
+    setProductList(filteredList);
+  }
+
+  useEffect(() => {
+    setProductList(products);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <FlatList
+          ListHeaderComponent={<SearchBar onSearch={searchProduct} />}
           keyExtractor={(item, index) => item.id.toString()}
-          data={products}
+          data={productList}
           renderItem={renderProduct}
           numColumns={2}
         />
