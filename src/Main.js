@@ -1,6 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, View, Text, FlatList, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  FlatList,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import {ProductCard, SearchBar} from './components';
 
 const products = [
@@ -97,6 +105,7 @@ const products = [
 function Main() {
   const [cartList, setCartList] = useState([]);
   const [productList, setProductList] = useState([]);
+
   const renderProduct = ({item}) => (
     <ProductCard product={item} onCart={addToCart} />
   );
@@ -116,7 +125,9 @@ function Main() {
     setProductList(products);
   }, []);
 
-  function addToCart(item) {}
+  function addToCart(item) {
+    setCartList([...cartList, item]); // SPREAD OPERATOR
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -131,6 +142,13 @@ function Main() {
           renderItem={renderProduct}
           numColumns={2}
         />
+
+        <TouchableOpacity style={styles.cartButtonContainer}>
+          <Image
+            source={require('./assets/cart.png')}
+            style={styles.cartIcon}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -145,6 +163,22 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: 'gray',
     fontSize: 30,
+  },
+  cartIcon: {
+    width: 45,
+    height: 45,
+    tintColor: 'white',
+  },
+  cartButtonContainer: {
+    position: 'absolute',
+    width: 70,
+    height: 70,
+    borderRadius: 70,
+    backgroundColor: 'orange',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    bottom: 20,
   },
 });
 
