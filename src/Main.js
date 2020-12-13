@@ -95,8 +95,11 @@ const products = [
 ];
 
 function Main() {
+  const [cartList, setCartList] = useState([]);
   const [productList, setProductList] = useState([]);
-  const renderProduct = ({item}) => <ProductCard product={item} />;
+  const renderProduct = ({item}) => (
+    <ProductCard product={item} onCart={addToCart} />
+  );
 
   function searchProduct(text) {
     const filteredList = products.filter((product) => {
@@ -112,6 +115,8 @@ function Main() {
   useEffect(() => {
     setProductList(products);
   }, []);
+
+  function addToCart(item) {}
 
   return (
     <SafeAreaView style={styles.container}>

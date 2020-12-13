@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, onCart}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -24,7 +24,7 @@ const ProductCard = ({product}) => {
           {!product.inStock && <Text style={styles.stock}>STOKTA YOK</Text>}
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onCart(product)}>
           <Image
             style={styles.cartLogo}
             source={require('../assets/cart.png')}
