@@ -105,6 +105,7 @@ function Main() {
           keyExtractor={(item, index) => item.id.toString()}
           data={products}
           renderItem={renderProduct}
+          numColumns={2}
         />
       </View>
     </SafeAreaView>
