@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {SafeAreaView, View, Text, FlatList, StyleSheet} from 'react-native';
+import {SafeAreaView, View, FlatList, StyleSheet} from 'react-native';
 import {ProductCard} from './components';
 
 const products = [

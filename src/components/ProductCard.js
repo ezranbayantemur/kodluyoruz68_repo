@@ -1,15 +1,6 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 
-// {
-//   id: 1,
-//   title: 'General Mobile GM 20',
-//   imgURL:
-//     'https://m.media-amazon.com/images/I/51lK00mvFaL._AC._SR180,230.jpg',
-//   price: '₺1.810,21',
-//   inStock: true,
-// },
-
 const ProductCard = ({product}) => {
   return (
     <View style={styles.container}>
@@ -53,6 +44,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
+    justifyContent: 'flex-end',
   },
   stock: {
     fontWeight: 'bold',
