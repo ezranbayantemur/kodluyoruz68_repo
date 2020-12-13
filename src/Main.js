@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, View, FlatList, StyleSheet} from 'react-native';
+import {SafeAreaView, View, Text, FlatList, StyleSheet} from 'react-native';
 import {ProductCard, SearchBar} from './components';
 
 const products = [
@@ -117,6 +117,9 @@ function Main() {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <FlatList
+          ListEmptyComponent={
+            <Text style={styles.emptyText}>Ürün Bulunamadı..</Text>
+          }
           ListHeaderComponent={<SearchBar onSearch={searchProduct} />}
           keyExtractor={(item, index) => item.id.toString()}
           data={productList}
@@ -132,6 +135,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eceff1',
+  },
+  emptyText: {
+    alignSelf: 'center',
+    color: 'gray',
+    fontSize: 30,
   },
 });
 

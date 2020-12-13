@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 
 const ProductCard = ({product}) => {
   return (
@@ -10,9 +17,19 @@ const ProductCard = ({product}) => {
         resizeMode="contain"
       />
       <Text style={styles.title}>{product.title}</Text>
+
       <View style={styles.footer}>
-        <Text style={styles.price}>{product.price}</Text>
-        {!product.inStock && <Text style={styles.stock}>STOKTA YOK</Text>}
+        <View>
+          <Text style={styles.price}>{product.price}</Text>
+          {!product.inStock && <Text style={styles.stock}>STOKTA YOK</Text>}
+        </View>
+
+        <TouchableOpacity>
+          <Image
+            style={styles.cartLogo}
+            source={require('../assets/cart.png')}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -44,11 +61,18 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
   },
   stock: {
     fontWeight: 'bold',
     color: 'red',
+  },
+  cartLogo: {
+    width: 25,
+    height: 25,
+    tintColor: 'orange',
   },
 });
 
