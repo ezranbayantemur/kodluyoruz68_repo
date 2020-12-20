@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, View, Text, FlatList} from 'react-native';
 import {Card} from '../components';
 
-import news_data from '../news_data.json'
+import news_data from '../news_data.json';
 
 function NewsList() {
   const renderNewsData = ({item}) => <Card news={item} />;

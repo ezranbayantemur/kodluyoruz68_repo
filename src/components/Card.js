@@ -14,9 +14,11 @@ const Card = ({news}) => {
   return (
     <View style={card_item_style.container}>
       <Image style={card_item_style.image} source={{uri: news.imageUrl}} />
-      <Text style={card_item_style.title}>{news.title}</Text>
-      <Text>{news.description}</Text>
-      <Text style={card_item_style.author}>{news.author}</Text>
+      <View style={card_item_style.footerContainer}>
+        <Text style={card_item_style.title}>{news.title}</Text>
+        <Text numberOfLines={2}>{news.description}</Text>
+        <Text style={card_item_style.author}>{news.author}</Text>
+      </View>
     </View>
   );
 };
