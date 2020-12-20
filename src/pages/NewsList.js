@@ -4,8 +4,13 @@ import {Card} from '../components';
 
 import news_data from '../news_data.json';
 
-function NewsList() {
-  const renderNewsData = ({item}) => <Card news={item} />;
+function NewsList(props) {
+  const renderNewsData = ({item}) => (
+    <Card
+      news={item}
+      onClick={() => props.navigation.navigate('Detail', {data: item})}
+    />
+  );
 
   return (
     <SafeAreaView>
