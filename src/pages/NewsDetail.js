@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, View, Text, Image} from 'react-native';
+import {SafeAreaView, View, Text, Image, ScrollView} from 'react-native';
 import {detail_page} from '../styles/pages_style';
 
 function NewsDetail({route}) {
@@ -8,7 +8,7 @@ function NewsDetail({route}) {
 
   return (
     <SafeAreaView>
-      <View>
+      <ScrollView bounces={false}>
         <Image
           resizeMode="contain"
           style={detail_page.image}
@@ -18,7 +18,7 @@ function NewsDetail({route}) {
           <Text style={detail_page.title}>{selected_data.title}</Text>
           <Text>{selected_data.description}</Text>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

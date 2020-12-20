@@ -27,4 +27,15 @@ const card_item_style = StyleSheet.create({
   },
 });
 
-export {card_item_style};
+const banner_item_style = StyleSheet.create({
+  image: {
+    margin: 5,
+    borderRadius: 10,
+    height: deviceSize.height / 7,
+  },
+  container: {
+    width: deviceSize.width,
+  },
+});
+
+export {card_item_style, banner_item_style};
