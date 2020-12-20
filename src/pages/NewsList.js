@@ -8,7 +8,7 @@ function NewsList(props) {
   const renderNewsData = ({item}) => (
     <Card
       news={item}
-      onClick={() => props.navigation.navigate('Detail', {data: item})}
+      onClick={() => props.navigation.navigate('Detail', {selected_data: item})}
     />
   );
 
