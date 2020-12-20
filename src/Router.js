@@ -6,9 +6,7 @@ const Stack = createStackNavigator();
 
 function App() {
   <NavigationContainer>
-      <Stack.Navigator>
-          {/* <Stack.Screen.. */}
-      </Stack.Navigator>
+    <Stack.Navigator>{/* <Stack.Screen.. */}</Stack.Navigator>
   </NavigationContainer>;
 }
 
