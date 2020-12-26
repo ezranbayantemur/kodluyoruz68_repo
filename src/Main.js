@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView, View, ScrollView, RefreshControl} from 'react-native';
 import RestaurantView from './components/RestaurantView';
+import {main_view} from './styles';
 
 const url_path = 'https://random-data-api.com/api/restaurant/random_restaurant';
 
 function Main() {
+  const [loading, setLoading] = useState(false);
   const [restaurantData, setRestaurantData] = useState({});
 
   async function fetchData() {
@@ -18,10 +20,13 @@ function Main() {
   }, []);
 
   return (
-    <SafeAreaView>
-      <View>
+    <SafeAreaView style={main_view.container}>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={() => fetchData()} />
+        }>
         <RestaurantView data={restaurantData} />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

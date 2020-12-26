@@ -4,7 +4,7 @@ const deviceSize = Dimensions.get('window');
 
 const restaurant_view = StyleSheet.create({
   container: {
-    backgroundColor: '#eceff1',
+    backgroundColor: 'white',
     padding: 10,
     margin: 10,
     borderRadius: 10,
@@ -42,4 +42,11 @@ const restaurant_view = StyleSheet.create({
   },
 });
 
-export {restaurant_view};
+const main_view = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#eceff1',
+  },
+});
+
+export {restaurant_view, main_view};
