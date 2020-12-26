@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, View} from 'react-native';
+import RestaurantView from './components/RestaurantView';
 
 const url_path = 'https://random-data-api.com/api/restaurant/random_restaurant';
 
@@ -14,11 +15,13 @@ function Main() {
 
   useEffect(() => {
     fetchData();
-  }, [restaurantData]);
+  }, []);
 
   return (
     <SafeAreaView>
-      <View></View>
+      <View>
+        <RestaurantView data={restaurantData} />
+      </View>
     </SafeAreaView>
   );
 }
