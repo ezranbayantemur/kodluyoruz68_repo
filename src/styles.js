@@ -20,6 +20,7 @@ const restaurant_view = StyleSheet.create({
     height: deviceSize.height / 3,
   },
   description: {
+    marginTop: 5,
     textAlign: 'center',
     fontSize: 12,
   },
@@ -34,6 +35,10 @@ const restaurant_view = StyleSheet.create({
   review: {
     marginVertical: 10,
     fontStyle: 'italic',
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
