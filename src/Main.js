@@ -1,34 +1,24 @@
-import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {SafeAreaView, View, Text, FlatList, Button} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView, View} from 'react-native';
 
-const url_path = 'https://jsonplaceholder.typicode.com/users';
+const url_path = 'https://random-data-api.com/api/restaurant/random_restaurant';
 
 function Main() {
-  const [userList, setUserList] = useState([]);
+  const [restaurantData, setRestaurantData] = useState({});
 
-  function fetchData() {
-    axios.get(url_path).then((response) => setUserList(response.data));
+  async function fetchData() {
+    const {data} = await axios.get(url_path);
+    setRestaurantData(data);
   }
 
   useEffect(() => {
     fetchData();
-  }, []);
-
-  const renderUsers = ({item}) => {
-    return <Text>{item.name}</Text>;
-  };
+  }, [restaurantData]);
 
   return (
     <SafeAreaView>
-      <View>
-        <FlatList
-          keyExtractor={(item) => item.id.toString()}
-          data={userList}
-          renderItem={renderUsers}
-        />
-        <Button title="Get" onPress={fetchData} />
-      </View>
+      <View></View>
     </SafeAreaView>
   );
 }
