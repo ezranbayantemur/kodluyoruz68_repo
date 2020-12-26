@@ -1,35 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {SafeAreaView, View, Text, Button} from 'react-native';
+import {SafeAreaView, View, Text, FlatList, Button} from 'react-native';
 
 const url_path = 'https://jsonplaceholder.typicode.com/users';
 
 function Main() {
-  function getDataThenCatch() {
-    console.log('START THEN-CATCH');
+  const [userList, setUserList] = useState([]);
 
-    axios.get(url_path).then((response_1) => {
-      console.log(response_1);
-    });
-
-    console.log('END THEN-CATCH');
+  function fetchData() {
+    axios.get(url_path).then((response) => setUserList(response.data));
   }
 
-  async function getDataAsync() {
-    console.log('START ASYNC');
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    const response = await axios.get(url_path);
-
-    console.log(response);
-    console.log('END ASYNC');
-  }
+  const renderUsers = ({item}) => {
+    return <Text>{item.name}</Text>;
+  };
 
   return (
     <SafeAreaView>
       <View>
-        <Text>Hello!</Text>
-        <Button title="Get Data Then Catch" onPress={getDataThenCatch} />
-        <Button title="Get Data Async" onPress={getDataAsync} />
+        <FlatList
+          keyExtractor={(item) => item.id.toString()}
+          data={userList}
+          renderItem={renderUsers}
+        />
+        <Button title="Get" onPress={fetchData} />
       </View>
     </SafeAreaView>
   );
