@@ -17,7 +17,7 @@ function Main() {
   const [loading, setLoading] = useState(false);
   const [restaurantData, setRestaurantData] = useState(null);
 
-  async function fetchData() {
+  function fetchData() {
     setLoading(true);
     wait(3000).then(() => {
       axios.get(url_path).then((response) => {
