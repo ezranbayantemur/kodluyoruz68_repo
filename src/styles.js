@@ -47,6 +47,12 @@ const main_view = StyleSheet.create({
     flex: 1,
     backgroundColor: '#eceff1',
   },
+  center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#eceff1',
+  },
 });
 
 export {restaurant_view, main_view};
