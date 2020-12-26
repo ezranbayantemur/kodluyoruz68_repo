@@ -19,6 +19,22 @@ const restaurant_view = StyleSheet.create({
     borderRadius: 10,
     height: deviceSize.height / 3,
   },
+  description: {
+    textAlign: 'center',
+    fontSize: 12,
+  },
+  address: {
+    fontWeight: 'bold',
+    marginVertical: 3,
+  },
+  phone_number: {
+    fontWeight: 'bold',
+    marginVertical: 3,
+  },
+  review: {
+    marginVertical: 10,
+    fontStyle: 'italic',
+  },
 });
 
 export {restaurant_view};

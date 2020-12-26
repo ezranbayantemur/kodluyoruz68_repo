@@ -26,6 +26,10 @@ function RestaurantView({data}) {
     <View style={restaurant_view.container}>
       <Text style={restaurant_view.title}>{data.name}</Text>
       <Image source={{uri: data.logo}} style={restaurant_view.image} />
+      <Text style={restaurant_view.address}>{data.address}</Text>
+      <Text style={restaurant_view.phone_number}>{data.phone_number}</Text>
+      <Text style={restaurant_view.description}>{data.description}</Text>
+      <Text style={restaurant_view.review}>"{data.review}"</Text>
     </View>
   );
 }
