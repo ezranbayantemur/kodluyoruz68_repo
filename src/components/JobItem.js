@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {job_item} from '../styles/components_styles';
 
-const JobItem = ({job}) => {
+const JobItem = ({job, onSelect}) => {
   return (
     <View style={job_item.container}>
       <Image
@@ -15,7 +15,7 @@ const JobItem = ({job}) => {
           <Text style={job_item.company}>{job.company}</Text>
           <Text style={job_item.title}>{job.title}</Text>
         </View>
-        <TouchableOpacity style={job_item.buttonContainer}>
+        <TouchableOpacity style={job_item.buttonContainer} onPress={onSelect}>
           <Text style={job_item.buttonTitle}>Details</Text>
         </TouchableOpacity>
       </View>
