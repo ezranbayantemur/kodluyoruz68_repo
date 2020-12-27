@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 
 function JobStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="List" component={JobList} />
       <Stack.Screen name="Detail" component={JobDetail} />
     </Stack.Navigator>
