@@ -22,6 +22,12 @@ const job_detail = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
   },
+  detail: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 5,
+  },
 });
 
 export {main, job_detail};
