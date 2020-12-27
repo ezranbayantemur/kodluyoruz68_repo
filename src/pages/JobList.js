@@ -1,11 +1,12 @@
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
+import {SearchBar} from '../components/SearchBar';
 
 function JobList(props) {
   return (
     <SafeAreaView>
       <View>
-        <Text>Job List</Text>
+        <SearchBar />
       </View>
     </SafeAreaView>
   );
