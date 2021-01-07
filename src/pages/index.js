@@ -1,3 +1,3 @@
-export * from './JobDetail';
-export * from './SavedJobs';
-export * from './JobList';
+export * from './categories/Categories';
+export * from './detail/Detail';
+export * from './meals/Meals';
