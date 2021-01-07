@@ -3,13 +3,16 @@ import {View, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {search_bar} from '../styles/components_styles';
 
-function SearchBar(props) {
+export function SearchBar(props) {
   const [searchedValue, setSearchedValue] = useState('');
 
   return (
     <View style={search_bar.container}>
       <View style={search_bar.inputContainer}>
-        <TextInput onChangeText={(val) => setSearchedValue(val)} />
+        <TextInput
+          placeholder="İş aramak için yazın.."
+          onChangeText={(val) => setSearchedValue(val)}
+        />
       </View>
       <TouchableOpacity
         style={search_bar.iconContainer}
@@ -19,5 +22,3 @@ function SearchBar(props) {
     </View>
   );
 }
-
-export {SearchBar};

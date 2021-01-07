@@ -9,7 +9,7 @@ const search_bar = StyleSheet.create({
     flexDirection: 'row',
   },
   iconContainer: {
-    backgroundColor: '#039be5',
+    backgroundColor: '#558b2f',
     padding: 5,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
@@ -51,7 +51,9 @@ const job_item = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  details: {},
+  details: {
+    flex: 1,
+  },
   buttonContainer: {
     backgroundColor: '#039be5',
     padding: 10,
@@ -63,4 +65,34 @@ const job_item = StyleSheet.create({
   },
 });
 
-export {search_bar, job_item};
+const empty_list = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    marginTop: 10,
+    fontWeight: 'bold',
+    fontSize: 30,
+    color: '#bdbdbd',
+    textAlign: 'center',
+  },
+});
+
+const loading = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    marginTop: 5,
+    fontWeight: 'bold',
+    fontSize: 25,
+    color: '#bdbdbd',
+    textAlign: 'center',
+  },
+});
+
+export {search_bar, job_item, empty_list, loading};

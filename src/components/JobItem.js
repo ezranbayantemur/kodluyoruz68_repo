@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {job_item} from '../styles/components_styles';
 
-const JobItem = ({job, onSelect}) => {
+export const JobItem = ({job, onSelect}) => {
   return (
     <View style={job_item.container}>
       <Image
@@ -22,5 +22,3 @@ const JobItem = ({job, onSelect}) => {
     </View>
   );
 };
-
-export {JobItem};

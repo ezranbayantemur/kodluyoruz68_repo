@@ -19,6 +19,7 @@ const job_detail = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   title: {
+    width: deviceSize.width * 0.8,
     fontWeight: 'bold',
     fontSize: 30,
   },
@@ -27,7 +28,18 @@ const job_detail = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 5,
+    backgroundColor: 'rgba(0,0,0,0.2)',
+  },
+  icon: {
+    width: deviceSize.width * 0.2,
+    textAlign: 'center',
   },
 });
 
-export {main, job_detail};
+const savedJobs = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+export {main, job_detail, savedJobs};
