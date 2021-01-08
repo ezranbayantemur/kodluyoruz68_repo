@@ -4,7 +4,7 @@ import {SafeAreaView, View, Text, FlatList} from 'react-native';
 import {MEAL_API} from '@env';
 import {MealItem} from './components';
 
-export function Meals({route}) {
+export function Meals({route, navigation}) {
   const {categoryName} = route.params;
   const [mealList, setMealList] = useState([]);
 
@@ -21,9 +21,15 @@ export function Meals({route}) {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const renderMeal = ({item}) => <MealItem item={item} />;
+  const renderMeal = ({item}) => (
+    <MealItem
+      item={item}
+      onSelect={() => navigation.navigate('Detail', {mealId: item.idMeal})}
+    />
+  );
 
   return (
     <SafeAreaView>
