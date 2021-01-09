@@ -33,4 +33,24 @@ const user_input = StyleSheet.create({
   },
 });
 
-export {user_input};
+const user_list = StyleSheet.create({
+  title: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  itemContainer: {
+    backgroundColor: 'white',
+    padding: 10,
+    margin: 10,
+    borderRadius: 5,
+  },
+  nameContainer: {
+    flexDirection: 'row',
+  },
+  mail: {
+    fontWeight: 'bold',
+  },
+});
+
+export {user_input, user_list};

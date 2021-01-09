@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 function Router() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator initialRouteName="Input">
         <Tab.Screen name="List" component={UserList} />
         <Tab.Screen name="Input" component={UserInput} />
       </Tab.Navigator>
