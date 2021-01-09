@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, Text, TextInput} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {user_input} from './styles';
 
 export function UserInput() {
@@ -22,6 +23,10 @@ export function UserInput() {
       <View style={user_input.inputContainer}>
         <TextInput placeholder="Age.." />
       </View>
+
+      <TouchableOpacity style={user_input.buttonContainer}>
+        <Text style={user_input.buttonText}>Submit</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }

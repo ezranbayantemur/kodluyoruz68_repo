@@ -17,6 +17,20 @@ const user_input = StyleSheet.create({
     margin: 10,
     backgroundColor: 'white',
   },
+
+  buttonContainer: {
+    borderRadius: 5,
+    backgroundColor: 'blue',
+    padding: 10,
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
 });
 
 export {user_input};
