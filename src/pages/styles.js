@@ -1,6 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const user_list = StyleSheet.create({
+const user_input = StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -19,4 +19,4 @@ const user_list = StyleSheet.create({
   },
 });
 
-export {user_list};
+export {user_input};
