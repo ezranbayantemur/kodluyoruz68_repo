@@ -21,7 +21,8 @@ export function UserInput() {
       age,
     };
 
-    dispatch({type: 'ADD_USER', payload: {user}});
+    console.log('DISPATCH DATA..');
+    dispatch({type: 'ADD_USER', payload: {userData: user}});
   }
 
   return (

@@ -8,6 +8,7 @@ import UserProvider from './context/UserProvider';
 const Tab = createBottomTabNavigator();
 
 function Router() {
+  console.log('ROUTER');
   return (
     <UserProvider>
       <NavigationContainer>
