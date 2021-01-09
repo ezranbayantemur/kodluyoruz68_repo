@@ -1,8 +1,11 @@
 import React from 'react';
 import {SafeAreaView, Text, View, FlatList} from 'react-native';
+import {useSelector} from 'react-redux';
 import {user_list} from './styles';
 
 export function UserList() {
+  const globalUserList = useSelector((state) => state.userList);
+
   const renderUsers = ({item}) => {
     return (
       <View style={user_list.itemContainer}>
@@ -23,22 +26,7 @@ export function UserList() {
 
       <FlatList
         keyExtractor={(item) => item.id.toString()}
-        data={[
-          {
-            id: 1,
-            mail: 'Test',
-            name: 'Test',
-            surName: 'Test',
-            age: 'Test',
-          },
-          {
-            id: 2,
-            mail: 'Test',
-            name: 'Test',
-            surName: 'Test',
-            age: 'Test',
-          },
-        ]}
+        data={globalUserList}
         renderItem={renderUsers}
       />
     </SafeAreaView>

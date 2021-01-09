@@ -2,12 +2,15 @@ import React, {useState} from 'react';
 import {SafeAreaView, View, Text, TextInput} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {user_input} from './styles';
+import {useDispatch} from 'react-redux';
 
 export function UserInput() {
   const [mail, setMail] = useState('');
   const [name, setName] = useState('');
   const [surName, setSurname] = useState('');
   const [age, setAge] = useState('');
+
+  const dispatch = useDispatch();
 
   function handleSubmit() {
     const user = {
@@ -18,7 +21,7 @@ export function UserInput() {
       age,
     };
 
-    console.log(user);
+    dispatch({type: 'ADD_USER', payload: {user}});
   }
 
   return (
