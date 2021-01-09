@@ -56,6 +56,12 @@ export function UserInput() {
         onPress={handleSubmit}>
         <Text style={user_input.buttonText}>Submit</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={user_input.buttonContainer}
+        onPress={() => dispatch({type: 'ACTIVATE_USERS'})}>
+        <Text style={user_input.buttonText}>Activate</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }

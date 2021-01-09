@@ -5,6 +5,7 @@ import {user_list} from './styles';
 
 export function UserList() {
   const globalUserList = useSelector((state) => state.userList);
+  const userActivateStatus = useSelector((state) => state.activeString);
 
   const renderUsers = ({item}) => {
     return (
@@ -23,6 +24,7 @@ export function UserList() {
   return (
     <SafeAreaView>
       <Text style={user_list.title}>User List</Text>
+      <Text style={user_list.title}>{userActivateStatus}</Text>
 
       <FlatList
         keyExtractor={(item) => item.id.toString()}
