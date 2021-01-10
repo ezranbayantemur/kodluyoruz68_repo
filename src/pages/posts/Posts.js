@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {SafeAreaView, FlatList, Text} from 'react-native';
 import {Loading, Error} from '../../components';
@@ -8,7 +9,6 @@ const API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 function Posts(props) {
   const {id} = props.route.params;
-
   const {data, loading, error} = useFetch(API_URL, {params: {userId: id}});
 
   if (loading) {
@@ -19,7 +19,7 @@ function Posts(props) {
     return <Error />;
   }
 
-  const renderPost = ({item}) => <PostItem item={item} />;
+  const renderPost = ({item}) => <PostItem item={item} onLike={() => null} />;
 
   const renderHeader = () => (
     <Text style={{fontSize: 35, fontWeight: 'bold', margin: 5}}>Posts</Text>
