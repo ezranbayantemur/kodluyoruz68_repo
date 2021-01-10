@@ -8,7 +8,7 @@ export function useFetch(url, config) {
   const [error, setError] = useState(null);
 
   async function fetchData() {
-    await wait(5000);
+    await wait(2500);
     setLoading(true);
     const {data: serverData} = await axios
       .get(url, config)
