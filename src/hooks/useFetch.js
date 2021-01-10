@@ -16,6 +16,7 @@ export function useFetch(url, config) {
         setLoading(false);
         setError(serverError);
       });
+
     setLoading(false);
     setData(serverData);
   }

@@ -4,11 +4,13 @@ import {SafeAreaView, Text, FlatList} from 'react-native';
 import {useFetch} from '../../hooks/useFetch';
 import {Loading, Error} from '../../components';
 import {FriendsItem} from './components/FriendsItem';
+import {useDispatch} from 'react-redux';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 function Friends(props) {
   const {data, loading, error} = useFetch(API_URL);
+  const dispatch = useDispatch();
 
   if (loading) {
     return <Loading />;
@@ -16,6 +18,10 @@ function Friends(props) {
 
   if (error) {
     return <Error />;
+  }
+
+  if (data) {
+    dispatch({type: 'SET_USERS', payload: {users: data}});
   }
 
   const renderFriend = ({item}) => (

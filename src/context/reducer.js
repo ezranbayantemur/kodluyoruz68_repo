@@ -7,6 +7,10 @@ function reducer(state, action) {
         ? {...state, favorites: [...state.favorites, item]}
         : state;
 
+    case 'SET_USERS':
+      const {users} = action.payload;
+      return {...state, users};
+
     // FAVORIDEN ÇIKARMA..
 
     default:
