@@ -1,17 +1,28 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {Map, Favorites, Friends} from './pages';
+import {Map, Favorites, Friends, Posts} from './pages';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function MainStack() {
+  return (
+    <Stack.Navigator screenOptions={{header: () => null}}>
+      <Stack.Screen name="FriendsScreen" component={Friends} />
+      <Stack.Screen name="PostsScreen" component={Posts} />
+    </Stack.Navigator>
+  );
+}
 
 function Router() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="FriendsScreen"
+        initialRouteName="MainStack"
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color}) => generateIcon(focused, color, route),
           tabBarLabel: () => null,
@@ -21,7 +32,7 @@ function Router() {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen name="MapScreen" component={Map} />
-        <Tab.Screen name="FriendsScreen" component={Friends} />
+        <Tab.Screen name="MainStack" component={MainStack} />
         <Tab.Screen name="FavoritesScreen" component={Favorites} />
       </Tab.Navigator>
     </NavigationContainer>
@@ -37,7 +48,7 @@ function generateIcon(focused, color, route) {
     case 'MapScreen':
       iconName = focused ? 'map' : 'map-outline';
       break;
-    case 'FriendsScreen':
+    case 'MainStack':
       iconName = focused ? 'account-multiple' : 'account-multiple-outline';
       break;
     case 'FavoritesScreen':

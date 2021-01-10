@@ -7,7 +7,7 @@ import {FriendsItem} from './components/FriendsItem';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-function Friends() {
+function Friends(props) {
   const {data, loading, error} = useFetch(API_URL);
 
   if (loading) {
@@ -18,7 +18,12 @@ function Friends() {
     return <Error />;
   }
 
-  const renderFriend = ({item}) => <FriendsItem item={item} />;
+  const renderFriend = ({item}) => (
+    <FriendsItem
+      item={item}
+      onSelect={() => props.navigation.navigate('PostsScreen', {id: item.id})}
+    />
+  );
 
   const renderHeader = () => (
     <Text style={{fontSize: 35, fontWeight: 'bold', margin: 5}}>Friends</Text>
