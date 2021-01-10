@@ -14,6 +14,7 @@ function Router() {
         initialRouteName="FriendsScreen"
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color}) => generateIcon(focused, color, route),
+          tabBarLabel: () => null,
         })}
         tabBarOptions={{
           activeTintColor: 'tomato',
@@ -48,5 +49,5 @@ function generateIcon(focused, color, route) {
   }
 
   // You can return any component that you like here!
-  return <Icon name={iconName} color={color} size={25} />;
+  return <Icon name={iconName} color={color} size={30} />;
 }
