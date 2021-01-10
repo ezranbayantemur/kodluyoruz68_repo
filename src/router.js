@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Map, Favorites, Friends, Posts} from './pages';
+import MainProvider from './context/MainProvider';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -20,22 +21,25 @@ function MainStack() {
 
 function Router() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="MainStack"
-        screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color}) => generateIcon(focused, color, route),
-          tabBarLabel: () => null,
-        })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}>
-        <Tab.Screen name="MapScreen" component={Map} />
-        <Tab.Screen name="MainStack" component={MainStack} />
-        <Tab.Screen name="FavoritesScreen" component={Favorites} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <MainProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="MainStack"
+          screenOptions={({route}) => ({
+            tabBarIcon: ({focused, color}) =>
+              generateIcon(focused, color, route),
+            tabBarLabel: () => null,
+          })}
+          tabBarOptions={{
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+          }}>
+          <Tab.Screen name="MapScreen" component={Map} />
+          <Tab.Screen name="MainStack" component={MainStack} />
+          <Tab.Screen name="FavoritesScreen" component={Favorites} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </MainProvider>
   );
 }
 
