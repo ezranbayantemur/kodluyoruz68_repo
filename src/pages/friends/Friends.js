@@ -1,7 +1,9 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {SafeAreaView, Text, FlatList} from 'react-native';
 import {useFetch} from '../../hooks/useFetch';
 import {Loading, Error} from '../../components';
+import {FriendsItem} from './components/FriendsItem';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -16,13 +18,19 @@ function Friends() {
     return <Error />;
   }
 
+  const renderFriend = ({item}) => <FriendsItem item={item} />;
+
+  const renderHeader = () => (
+    <Text style={{fontSize: 35, fontWeight: 'bold', margin: 5}}>Friends</Text>
+  );
+
   return (
     <SafeAreaView>
-      <Text>Friends</Text>
       <FlatList
+        ListHeaderComponent={renderHeader}
         data={data}
         keyExtractor={(_, i) => i.toString()}
-        renderItem={({item}) => <Text>{item.name}</Text>}
+        renderItem={renderFriend}
       />
     </SafeAreaView>
   );
