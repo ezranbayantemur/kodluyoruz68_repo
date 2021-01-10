@@ -1,26 +1,19 @@
 import React from 'react';
-import {SafeAreaView, Text, FlatList, ActivityIndicator} from 'react-native';
+import {SafeAreaView, Text, FlatList} from 'react-native';
 import {useFetch} from '../../hooks/useFetch';
+import {Loading, Error} from '../../components';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-function Friends(props) {
+function Friends() {
   const {data, loading, error} = useFetch(API_URL);
 
   if (loading) {
-    return (
-      <SafeAreaView>
-        <ActivityIndicator size="large" />
-      </SafeAreaView>
-    );
+    return <Loading />;
   }
 
   if (error) {
-    return (
-      <SafeAreaView>
-        <Text>Hata..</Text>
-      </SafeAreaView>
-    );
+    return <Error />;
   }
 
   return (

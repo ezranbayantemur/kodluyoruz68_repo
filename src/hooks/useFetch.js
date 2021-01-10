@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import wait from 'waait';
 
 export function useFetch(url) {
   const [data, setData] = useState(null);
@@ -7,6 +8,8 @@ export function useFetch(url) {
   const [error, setError] = useState(null);
 
   async function fetchData() {
+    await wait(5000);
+    setLoading(true);
     const {data: serverData} = await axios.get(url).catch((serverError) => {
       setLoading(false);
       setError(serverError);
@@ -20,5 +23,5 @@ export function useFetch(url) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return {data, loading, error};
+  return {data, loading, error, fetchData};
 }
