@@ -1,27 +1,26 @@
 import React, {useState} from 'react';
-import {Button, SafeAreaView, StyleSheet, TextInput} from 'react-native';
+import {Button, SafeAreaView, Text, TextInput, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import styles from './styles';
 
-function Main() {
+export function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function signUp() {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((response) => console.log(response))
-      .catch((response) => console.log(response));
+    navigation.navigate('Sign');
   }
 
   function signIn() {
     auth()
       .signInWithEmailAndPassword(email, password)
-      .then((response) => console.log(response))
-      .catch((code) => console.log(code));
+      .then((response) => navigation.navigate('Todo'))
+      .catch((response) => Alert.alert(response.code, response.message));
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.logo}>🌔</Text>
       <TextInput
         style={styles.input}
         placeholder="Email.."
@@ -32,18 +31,8 @@ function Main() {
         placeholder="Password.."
         onChangeText={(value) => setPassword(value)}
       />
-      <Button title="Kayıt Ol" onPress={signUp} />
       <Button title="Giriş Yap" onPress={signIn} />
+      <Button title="Kayıt Ol" onPress={signUp} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  input: {
-    backgroundColor: '#e0e0e0',
-    padding: 10,
-    margin: 5,
-  },
-});
-
-export default Main;
