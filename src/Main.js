@@ -6,7 +6,19 @@ function Main() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function signUp() {}
+  function signUp() {
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((response) => console.log(response))
+      .catch((response) => console.log(response));
+  }
+
+  function signIn() {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((response) => console.log(response))
+      .catch((code) => console.log(code));
+  }
 
   return (
     <SafeAreaView>
@@ -21,11 +33,12 @@ function Main() {
         onChangeText={(value) => setPassword(value)}
       />
       <Button title="Kayıt Ol" onPress={signUp} />
+      <Button title="Giriş Yap" onPress={signIn} />
     </SafeAreaView>
   );
 }
 
-const styles = (StyleSheet.create = {
+const styles = StyleSheet.create({
   input: {
     backgroundColor: '#e0e0e0',
     padding: 10,
