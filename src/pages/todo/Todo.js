@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FlatList, SafeAreaView} from 'react-native';
-import auth from '@react-native-firebase/auth';
 import TodoItem from './components/TodoItem';
+import TodoInput from './components/TodoInput';
 
 const temp_data = [
   {id: 0, text: 'Test todo..'},
@@ -9,18 +9,23 @@ const temp_data = [
   {id: 2, text: 'Test todo..'},
 ];
 
-auth().signOut();
-
 export function Todo() {
   const renderTodo = ({item}) => <TodoItem item={item} />;
 
+  function addTodo(todo) {
+    return;
+  }
+
   return (
-    <SafeAreaView>
+    // eslint-disable-next-line react-native/no-inline-styles
+    <SafeAreaView style={{flex: 1}}>
       <FlatList
         keyExtractor={(item) => item.id.toString()}
         data={temp_data}
         renderItem={renderTodo}
       />
+
+      <TodoInput onAdd={addTodo} />
     </SafeAreaView>
   );
 }

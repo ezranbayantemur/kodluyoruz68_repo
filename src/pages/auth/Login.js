@@ -12,6 +12,7 @@ export function Login({navigation}) {
   }
 
   function signIn() {
+    // TODO: CUSTOM HOOK EKLENECEK
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => navigation.navigate('Todo'))

@@ -1,20 +1,38 @@
 import React, {useState} from 'react';
-import {Button, SafeAreaView, Text, TextInput, Alert} from 'react-native';
-import auth from '@react-native-firebase/auth';
+import {
+  Button,
+  SafeAreaView,
+  Text,
+  TextInput,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
 import styles from './styles';
+import {useSign} from './hooks';
 
 export function Sign({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {loading, error, response, sign} = useSign();
 
   function signUp() {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        Alert.alert('moon', 'Hesabınız oluşturuldu');
-        navigation.navigate('Login');
-      })
-      .catch(({code, message}) => Alert.alert(code, message));
+    sign(email, password);
+  }
+
+  if (response) {
+    navigation.navigate('Login');
+  }
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <ActivityIndicator size="large" />
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    Alert.alert('moon', error.message);
   }
 
   return (
