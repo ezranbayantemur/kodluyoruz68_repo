@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "780898545263",
+    "project_id": "kodluyoruz68-firebase",
+    "storage_bucket": "kodluyoruz68-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780898545263:android:d9bd824385061929b0a79a",
+        "android_client_info": {
+          "package_name": "com.kodluyoruz68"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780898545263-o29djngbh5ijcjimstp3dafk4lhi88m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEBGq6y5QSrg0p-r5W5CzawFRYpFVFb00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780898545263-o29djngbh5ijcjimstp3dafk4lhi88m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

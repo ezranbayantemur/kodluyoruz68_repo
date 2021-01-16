@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-
+#import <Firebase.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -29,6 +29,10 @@ static void InitializeFlipper(UIApplication *application) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [GMSServices provideAPIKey:@"AIzaSyCiv8iE_0YB18zCt6jbHeA91k2FEo2trXk"];
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+  
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
