@@ -9,6 +9,8 @@ const temp_data = [
   {id: 2, text: 'Test todo..'},
 ];
 
+auth().signOut();
+
 export function Todo() {
   const renderTodo = ({item}) => <TodoItem item={item} />;
 

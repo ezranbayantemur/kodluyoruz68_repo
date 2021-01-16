@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, SafeAreaView, Text, TextInput} from 'react-native';
+import {Button, SafeAreaView, Text, TextInput, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import styles from './styles';
 
@@ -10,8 +10,11 @@ export function Sign({navigation}) {
   function signUp() {
     auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((response) => console.log(response))
-      .catch((response) => console.log(response));
+      .then(() => {
+        Alert.alert('moon', 'Hesabınız oluşturuldu');
+        navigation.navigate('Login');
+      })
+      .catch(({code, message}) => Alert.alert(code, message));
   }
 
   return (
@@ -20,6 +23,7 @@ export function Sign({navigation}) {
       <TextInput
         style={styles.input}
         placeholder="Email.."
+        autoCapitalize="none"
         onChangeText={(value) => setEmail(value)}
       />
       <TextInput

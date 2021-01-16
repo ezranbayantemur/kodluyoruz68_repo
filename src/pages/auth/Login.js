@@ -14,14 +14,15 @@ export function Login({navigation}) {
   function signIn() {
     auth()
       .signInWithEmailAndPassword(email, password)
-      .then((response) => navigation.navigate('Todo'))
-      .catch((response) => Alert.alert(response.code, response.message));
+      .then(() => navigation.navigate('Todo'))
+      .catch(({code, message}) => Alert.alert(code, message));
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.logo}>🌔</Text>
       <TextInput
+        autoCapitalize="none"
         style={styles.input}
         placeholder="Email.."
         onChangeText={(value) => setEmail(value)}
