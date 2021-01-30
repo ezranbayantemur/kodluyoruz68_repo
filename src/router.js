@@ -1,35 +1,36 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import auth from '@react-native-firebase/auth';
-
-import {Login, Sign} from './pages/auth';
-import {Todo} from './pages/todo';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Main, Detail, Cart} from './pages';
+import AppProvider from './context/Provider';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const hasSession = auth().currentUser;
-
-function AuthStack() {
+const ProductsStack = () => {
   return (
     <Stack.Navigator screenOptions={{header: () => null}}>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Sign" component={Sign} />
+      <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="Detail" component={Detail} />
     </Stack.Navigator>
   );
-}
+};
 
-function App() {
+const Router = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName={hasSession ? 'Todo' : 'Auth'}
-        screenOptions={{header: () => null}}>
-        <Stack.Screen name="Auth" component={AuthStack} />
-        <Stack.Screen name="Todo" component={Todo} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AppProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: 'purple',
+          }}>
+          <Tab.Screen name="Products" component={ProductsStack} />
+          <Tab.Screen name="Cart" component={Cart} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </AppProvider>
   );
-}
+};
 
-export default App;
+export default Router;

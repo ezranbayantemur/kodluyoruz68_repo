@@ -3117,6 +3117,11 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+first-npm-ugur@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/first-npm-ugur/-/first-npm-ugur-1.0.2.tgz#a352eb70ee0a8e838cb005e5f06bd4e6c8209d5d"
+  integrity sha512-ZFdkwg15DI20SKenqhqhjzpRCTsa4Hedx57v9vZpaAnpftH3Ok4NFFuAA77g9XxML07DXVscKaaw6Li2Az1WZw==
+
 flat-cache@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-2.0.1.tgz"
@@ -4517,6 +4522,71 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+kodluyoruz68-bahar@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-bahar/-/kodluyoruz68-bahar-1.0.0.tgz#b7b29bfa8e1d5575591197aad616254bc1cb7770"
+  integrity sha512-TnBI0PHRGsD1pG+unb24vUCw8l/OGhpHxjAVR2KathcwngnURMwErH9KZoSKXdKm5/A8liFatCoOZ/LqJmBe5g==
+
+kodluyoruz68-beyza@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-beyza/-/kodluyoruz68-beyza-1.0.0.tgz#de8c4666030222ed305814718e91bc33fe1ec6d2"
+  integrity sha512-ipSZFY7pgr7E7FDOYyw8T+IuSIZePwaRPuJaRJgWZtgbKb0psT0Ut5Zv4fBMGKNo/tW5rHetFIEgzGO5A4JbxA==
+
+kodluyoruz68-enes@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-enes/-/kodluyoruz68-enes-1.0.0.tgz#e4679d76a386ee8634a66d96a2b4158f466092c5"
+  integrity sha512-3k2t96j4RAiXlFLXbtORCL8BQDKfoKLnK+6IJEOTTeY1q4IcfoPGlSDPSj0JhYKCu0NgtAMcv5h58lWWgod44A==
+
+kodluyoruz68-ezran@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-ezran/-/kodluyoruz68-ezran-1.0.0.tgz#b3132f2b3eb44416274e9d42b72713fb0e8a18b6"
+  integrity sha512-xZTeZa02MXyyV57sW2WAgbM2xt/AvctlwtQm89LyuIGd7J5nQekicAiTc02PgazYulhSp87hgDxwdOnUBZryuQ==
+
+kodluyoruz68-furkan@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-furkan/-/kodluyoruz68-furkan-1.0.0.tgz#87c166d5770d4dd5958f621353a4c10206d5c965"
+  integrity sha512-tSMZtIUvqOkqUwWYKa3rfOthUTboJu2Z/FkIWbUFLHsq8D966iwWrBlSVvGDMaQn8zSzHoMie50i08n4ZaV2/g==
+
+kodluyoruz68-hussam@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-hussam/-/kodluyoruz68-hussam-1.0.1.tgz#c94d118c8c34d72586ca2663060ae96ed2128b60"
+  integrity sha512-WpeSQfptISXKTG1h58Fxi54QRMywltHof/qkGSWO96vCnQr3Xeitn7kPZ+yTMbdJQBtSwXC6CILysct2Qxtr4w==
+
+kodluyoruz68-mertkaan@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-mertkaan/-/kodluyoruz68-mertkaan-1.0.0.tgz#46ede9c870aa27fa2b9302ab59aec1ffa4b85ff5"
+  integrity sha512-mLcsbou4JOfU0QGoWF3kiCkUNfv5gkuQ79jKfOOcAssKQAfmNiv6HOsog0a5KKpkyhcLK2x7x9+LkaJ7eDyqBQ==
+
+kodluyoruz68-moayad@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-moayad/-/kodluyoruz68-moayad-1.0.0.tgz#0eaf1631eacb6f7c63f1ec34c0dcf7b3ac8c86db"
+  integrity sha512-P4FZF93sKifmxYKzqGB7yAa3blTnJLZwehDEziQZrUSrPQCub84fKCJOPV7rUxZHSloxFGx38ljPeT4eLfQKGA==
+
+kodluyoruz68-muharremkackin@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-muharremkackin/-/kodluyoruz68-muharremkackin-1.0.2.tgz#06ced21507050695e3d7c225616947638e53ea77"
+  integrity sha512-uJ27hGjqL1QuPht6meDDFXuIzSgBfBoELrwPQRCEzEpDvlhTkOHsblbElqkAxuobPtmN+nHOBvyi2ensGlVdJw==
+
+kodluyoruz68-yasin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-yasin/-/kodluyoruz68-yasin-1.0.0.tgz#dce84a8c07b52707e1a60b683cad288b08d73c14"
+  integrity sha512-luwoe9fXkdGgac9Tl0K6XsOfuyJStGuC6WioEo0TFPy/hYr5d2+4aE+9xSCW1IgBHWTB+4EmzZIvJmuePNRlzg==
+
+kodluyoruz68-zeynep@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz68-zeynep/-/kodluyoruz68-zeynep-1.0.0.tgz#8e320a86e331c2ee1283b67ee0fc5fb967783f64"
+  integrity sha512-dhi79UbLAISpPEdJd4PXasCpJgKhdWdjvn2R/3N3epRwOA9N6+Z1+2Fj6p1tA/v7ZIsXbz2DothgXVbGDEyRRQ==
+
+kodluyoruz_fatma@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruz_fatma/-/kodluyoruz_fatma-1.0.0.tgz#0ad35c2c0784d1c73df98f343bea559e7e3f6749"
+  integrity sha512-fg7i443MO9DfXSQuLruVCqSwvEazyGJpKbZaS3AxFbcaVAwqhXaHO2d/rT1HQ/Ba5dfE2/Y7xZhUkPX55Zz2TQ==
+
+kodluyoruzmehmet@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kodluyoruzmehmet/-/kodluyoruzmehmet-1.0.0.tgz#cbe36c9d315412d5a70b4c83e7736b678e6c52d8"
+  integrity sha512-jFjikBOPnnfhOy+YUKSM7bOffYe6G23PRZ2PCQAgYQ991hzpcSkzbBsetaFHG6cKEXmxiQh18/i1GHcDbRlb2w==
 
 leven@^3.1.0:
   version "3.1.0"
